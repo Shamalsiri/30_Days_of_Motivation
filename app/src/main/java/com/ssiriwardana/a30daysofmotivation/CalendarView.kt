@@ -49,8 +49,109 @@ fun CalendarView(modifier: Modifier = Modifier) {
     var year by remember { mutableIntStateOf(Calendar.getInstance().get(Calendar.YEAR)) }
     val days = loadCalendarRows(month, year)
     var date by remember { mutableStateOf(LocalDate.now()) }
-    Column {
+    Box(
+        modifier = modifier.fillMaxSize(), contentAlignment = Alignment.Center
+    ) {
         var showDialog by remember { mutableStateOf(false) }
+
+        Column {
+            Row(
+                modifier = modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                IconButton(onClick = {
+                    year--
+                }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
+                        contentDescription = null
+                    )
+                }
+                Text(year.toString())
+                IconButton(onClick = {
+                    year++
+                }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                        contentDescription = null
+                    )
+                }
+            }
+
+            Row(
+                modifier = modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                IconButton(onClick = {
+                    if (month != 0) month--
+                    else {
+                        month = 11
+                        year--
+                    }
+                }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
+                        contentDescription = null
+                    )
+                }
+                Text(DateFormatSymbols().months[month])
+                IconButton(onClick = {
+                    if (month != 11) month++
+                    else {
+                        month = 0
+                        year++
+                    }
+                }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                        contentDescription = null
+                    )
+                }
+            }
+            Column() {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ) {
+                    CalendarCell("Sun")
+                    CalendarCell("Mon")
+                    CalendarCell("Tue")
+                    CalendarCell("Wed")
+                    CalendarCell("Thu")
+                    CalendarCell("Fri")
+                    CalendarCell("Sat")
+                }
+
+                for (i in 0..5) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(vertical = 8.dp),
+                        horizontalArrangement = Arrangement.SpaceEvenly
+                    ) {
+                        for (k in 0..6) {
+                            CalendarCell(days[i][k], onClick = {
+                                showDialog = true
+                                date = LocalDate.of(year, month + 1, days[i][k].toInt())
+                            }, month = month, year = year)
+                        }
+                    }
+                }
+            }
+
+            Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+                Button(onClick = {
+                    month = Calendar.getInstance().get(Calendar.MONTH)
+                    year = Calendar.getInstance().get(Calendar.YEAR)
+                }) {
+                    Text(text = "Today")
+                }
+            }
+        }
 
         if (showDialog) {
             Box(modifier = modifier.fillMaxSize()) {
@@ -58,108 +159,10 @@ fun CalendarView(modifier: Modifier = Modifier) {
                     modifier = Modifier
                         .fillMaxWidth(.9f)
                         .align(Alignment.Center)
-                        .fillMaxHeight(.7f),
-                    onDismiss = { showDialog = false },
-                    date = date
+                        .fillMaxHeight(.7f), onDismiss = { showDialog = false }, date = date
                 )
             }
         }
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            IconButton(onClick = {
-                year--
-            }) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
-                    contentDescription = null
-                )
-            }
-            Text(year.toString())
-            IconButton(onClick = {
-                year++
-            }) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = null
-                )
-            }
-        }
-
-        Row(
-            modifier = modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceEvenly,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            IconButton(onClick = {
-                if (month != 0) month--
-                else {
-                    month = 11
-                    year--
-                }
-            }) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowLeft,
-                    contentDescription = null
-                )
-            }
-            Text(DateFormatSymbols().months[month])
-            IconButton(onClick = {
-                if (month != 11) month++
-                else {
-                    month = 0
-                    year++
-                }
-            }) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Filled.KeyboardArrowRight,
-                    contentDescription = null
-                )
-            }
-        }
-        Column() {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(vertical = 8.dp), horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                CalendarCell("Sun")
-                CalendarCell("Mon")
-                CalendarCell("Tue")
-                CalendarCell("Wed")
-                CalendarCell("Thu")
-                CalendarCell("Fri")
-                CalendarCell("Sat")
-            }
-
-            for (i in 0..5) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(vertical = 8.dp), horizontalArrangement = Arrangement.SpaceEvenly
-                ) {
-                    for (k in 0..6) {
-                        CalendarCell(days[i][k], onClick = {
-                            showDialog = true
-                            date = LocalDate.of(year, month + 1, days[i][k].toInt())
-                        }, month = month, year = year)
-                    }
-                }
-            }
-        }
-
-        Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
-            Button(onClick = {
-                month = Calendar.getInstance().get(Calendar.MONTH)
-                year = Calendar.getInstance().get(Calendar.YEAR)
-            }) {
-                Text(text = "Today")
-            }
-        }
-
-
     }
 }
 
@@ -225,8 +228,7 @@ fun CalendarCell(
             if (isClickable) it
                 .clickable { onClick() }
                 .aspectRatio(1f)
-            else
-                it
+            else it
         }
 
     Row(
@@ -259,8 +261,7 @@ fun CalendarCell(
 
         } else {
             Text(
-                text = cellVal,
-                style = if (cellVal.isNotEmpty() && cellVal[0].isLetter()) {
+                text = cellVal, style = if (cellVal.isNotEmpty() && cellVal[0].isLetter()) {
                     TextStyle(fontWeight = FontWeight.Bold)
                 } else {
                     TextStyle(fontWeight = FontWeight.Normal)
