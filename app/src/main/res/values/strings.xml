@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">30 Days of Motivation</string>
+    <string name="_1_quote">The only way to do great work is to love what you do.</string>
+    <string name="_1_author">Steve Jobs</string>
+    <string name="_2_quote">Success is not the key to happiness. Happiness is the key to success.</string>
+    <string name="_2_author">Albert Schweitzer</string>
+    <string name="_3_quote">Don\'t watch the clock; do what it does. Keep going.</string>
+    <string name="_3_author">Sam Levenson</string>
+    <string name="_4_quote">Believe you can and you\'re halfway there.</string>
+    <string name="_4_author">Theodore Roosevelt</string>
+    <string name="_5_quote">The harder you work for something, the greater you\'ll feel when you achieve it.</string>
+    <string name="_5_author">Unknown</string>
+    <string name="_6_quote">Don\'t stop when you\'re tired. Stop when you\'re done.</string>
+    <string name="_6_author">Unknown</string>
+    <string name="_7_quote">Dream big and dare to fail.</string>
+    <string name="_7_author">Norman Vaughan</string>
+    <string name="_8_quote">What lies behind us and what lies before us are tiny matters compared to what lies within us.</string>
+    <string name="_8_author">Ralph Waldo Emerson</string>
+    <string name="_9_quote">The future belongs to those who believe in the beauty of their dreams.</string>
+    <string name="_9_author">Eleanor Roosevelt</string>
+    <string name="_10_quote">You don’t have to be great to start, but you have to start to be great.</string>
+    <string name="_10_author">Zig Ziglar</string>
+    <string name="_11_quote">Act as if what you do makes a difference. It does.</string>
+    <string name="_11_author">William James</string>
+    <string name="_12_quote">Success is not final, failure is not fatal: It is the courage to continue that counts.</string>
+    <string name="_12_author">Winston Churchill</string>
+    <string name="_13_quote">Keep your face always toward the sunshine—and shadows will fall behind you.</string>
+    <string name="_13_author">Walt Whitman</string>
+    <string name="_14_quote">Opportunities don\'t happen. You create them.</string>
+    <string name="_14_author">Chris Grosser</string>
+    <string name="_15_quote">Your limitation—it\'s only your imagination.</string>
+    <string name="_15_author">Unknown</string>
+    <string name="_16_quote">Hardships often prepare ordinary people for an extraordinary destiny.</string>
+    <string name="_16_author">C.S. Lewis</string>
+    <string name="_17_quote">Go as far as you can see; when you get there, you’ll be able to see further.</string>
+    <string name="_17_author">Thomas Carlyle</string>
+    <string name="_18_quote">You are never too old to set another goal or to dream a new dream.</string>
+    <string name="_18_author">C.S. Lewis</string>
+    <string name="_19_quote">Do what you can, with what you have, where you are.</string>
+    <string name="_19_author">Theodore Roosevelt</string>
+<!---->
+    <string name="_20_quote">Don’t let yesterday take up too much of today.</string>
+    <string name="_20_author">Will Rogers</string>
+<!---->
+    <string name="_21_quote">The best way to predict your future is to create it.</string>
+    <string name="_21_author">Peter Drucker</string>
+<!---->
+    <string name="_22_quote">The only limit to our realization of tomorrow is our doubts of today.</string>
+    <string name="_22_author">Franklin D. Roosevelt</string>
+<!---->
+    <string name="_23_quote">Success usually comes to those who are too busy to be looking for it.</string>
+    <string name="_23_author">Henry David Thoreau</string>
+<!---->
+    <string name="_24_quote">Doubt kills more dreams than failure ever will.</string>
+    <string name="_24_author">Suzy Kassem</string>
+<!---->
+    <string name="_25_quote">Success is walking from failure to failure with no loss of enthusiasm.</string>
+    <string name="_25_author">Winston Churchill</string>
+<!---->
+    <string name="_26_quote">You miss 100% of the shots you don’t take.</string>
+    <string name="_26_author">Wayne Gretzky</string>
+<!---->
+    <string name="_27_quote">If you can dream it, you can do it.</string>
+    <string name="_27_author">Walt Disney</string>
+<!---->
+    <string name="_28_quote">Don’t wait for opportunity. Create it.</string>
+    <string name="_28_author">George Bernard Shaw</string>
+<!---->
+    <string name="_29_quote">Great things never come from comfort zones.</string>
+    <string name="_29_author">Unknown</string>
+<!---->
+    <string name="_30_quote">Push yourself, because no one else is going to do it for you.</string>
+    <string name="_30_author">Unknown</string>
+<!---->
+    <string name="_31_quote">The secret of getting ahead is getting started.</string>
+    <string name="_31_author">Mark Twain</string>
+<!---->
+</resources>
