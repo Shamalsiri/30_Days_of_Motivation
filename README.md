@@ -1,6 +1,6 @@
 # 30 Days of Motivation
 
-\- by Shamal Siriwardana
+&ndash; by Shamal Siriwardana
 
 ## About the project
 
